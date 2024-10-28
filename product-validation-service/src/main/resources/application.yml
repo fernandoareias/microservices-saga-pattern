@@ -1,0 +1,31 @@
+server:
+  port: 8090
+
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    topic:
+      teste: teste
+    consumer:
+      group-id: product-group
+      auto-offset-reset: latest
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/product-db
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    org:
+      apache:
+        kafka: OFF

@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: orchestrator-group
+      auto-offset-reset: latest
+
+  topic:
+    start-saga: start-saga
+    orchestrator: orchestrator
+    finish-success: finish-success
+    finish-fail: finish-fail
+    product-validation-success: product-validation-success
+    product-validation-fail: product-validation-fail
+    payment-success: payment-success
+    payment-fail: payment-fail
+    inventory-success: inventory-success
+    inventory-fail: inventory-fail
+    notify-ending: notify-ending
+
+logging:
+  level:
+    org:
+      apache:
+        kafka: OFF
